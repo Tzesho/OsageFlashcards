@@ -8,6 +8,8 @@ var cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
+const blobRoutes = require("./routes/blobRoutes");
+const tableRoutes = require("./routes/tableRoutes");
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use(blobRoutes);
+app.use(tableRoutes);
 app.use("/users", usersRouter);
 app.use("/testAPI", testAPIRouter);
 

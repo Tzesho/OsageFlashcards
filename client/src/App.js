@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
+import Flashcard from "./components/Flashcard";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -28,6 +29,9 @@ function App() {
           Learn React
         </a>
         <p className="App-intro">{message}</p>
+        <p>
+          <Flashcard />
+        </p>
       </header>
     </div>
   );
